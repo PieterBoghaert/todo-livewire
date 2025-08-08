@@ -28,7 +28,7 @@ class TodoList extends Component
         ]);
 
         $this->reset('name', 'completed');
-        session()->flash('success', 'Todo created successfully.');
+        //session()->flash('success', 'Todo created successfully.');
     }
 
     public function updateTodoOrder($todos)

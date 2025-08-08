@@ -3,8 +3,8 @@
     <header class="main-header">
         <h1>TODO</h1>
         <div class="theme-toggle" data-theme="light">
-            <img src="{{ asset('img/icon-moon.svg') }}" alt="Moon icon" class="icon-moon">
-            <img src="{{ asset('img/icon-sun.svg') }}" alt="Sun icon" class="icon-sun">
+            <img src="{{ public_path('img/icon-moon.svg') }}" alt="Moon icon" class="icon-moon">
+            <img src="{{ public_path('img/icon-sun.svg') }}" alt="Sun icon" class="icon-sun">
         </div>
     </header>
 
