@@ -1,0 +1,71 @@
+@use "../util/" as u;
+
+@layer typography {
+    /* josefin-sans-regular - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Josefin Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: url("/public/fonts/josefin-sans-v33-latin-regular.woff2")
+            format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* josefin-sans-700 - latin */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: "Josefin Sans";
+        font-style: normal;
+        font-weight: 700;
+        src: url("/public/fonts/josefin-sans-v33-latin-700.woff2")
+            format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    :root {
+        --fs-40: calc(40 / 16 * 1rem);
+        --fs-18: calc(18 / 16 * 1rem);
+        --fs-16: 1rem;
+        --fs-15: calc(15 / 16 * 1rem);
+        --fs-14: calc(14 / 16 * 1rem);
+
+        --font-size-h1: var(--fs-40);
+        --font-size-p: var(--fs-18);
+        --font-default: "Josefin Sans", sans-serif;
+    }
+
+    body {
+        font-size: var(--font-size-p);
+        font-family: var(--font-default);
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    p {
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin: 0;
+        text-wrap: balance;
+        line-height: normal;
+    }
+
+    h1,
+    .h1 {
+        font-size: var(--font-size-h1);
+        font-weight: 700;
+        color: var(--c-slate-900);
+        line-height: 1.2;
+    }
+
+    p {
+        max-inline-size: 50ch;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--c-slate-500);
+    }
+}

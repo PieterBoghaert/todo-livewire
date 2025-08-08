@@ -1,0 +1,17 @@
+@keyframes move-in {
+    from {
+        translate: 0 -100%;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+@keyframes circle-in {
+    from {
+        clip-path: circle(0% at 50% 0%);
+    }
+    to {
+        clip-path: circle(120% at 50% 0%);
+    }
+}

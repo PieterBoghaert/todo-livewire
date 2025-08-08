@@ -1,0 +1,51 @@
+form,
+.todo-list {
+    input[type="checkbox"] {
+        appearance: none;
+        inline-size: 24px;
+        block-size: 24px;
+        border-radius: 50%;
+        border: 1px solid var(--c-white-200);
+        transition: border-color 0.3s ease-in;
+
+        &:hover {
+            border-color: transparent;
+            background-image: linear-gradient(white, white),
+                radial-gradient(
+                    circle at 100%,
+                    var(--c-blue-500),
+                    var(--c-purple-400)
+                );
+
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            transition-duration: 0;
+        }
+
+        &:checked {
+            background-image: radial-gradient(
+                    circle at 100%,
+                    var(--c-blue-500),
+                    var(--c-purple-400)
+                ),
+                url("/public/img/icon-check.svg");
+            background-position: center, center;
+            background-size: cover, contain;
+        }
+    }
+
+    input {
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    input[type="text"] {
+        padding-block: var(--spacing-150);
+        inline-size: 100%;
+
+        &:focus,
+        &:focus-within {
+            outline-width: 0;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+:root {
+    --c-purple-950: oklch(17.5% 0.045 312.66);
+    --c-purple-900: oklch(27.5% 0.035 312.66);
+    --c-purple-400: oklch(65.549% 0.23148 312.661);
+    --c-blue-700: oklch(61.344% 0.20542 262.224);
+    --c-blue-500: oklch(79.5% 0.21 236);
+    --c-white-500: oklch(67.424% 0.02353 282.87);
+    --c-white-200: oklch(92% 0.01 270);
+    --c-white-100: oklch(98% 0.005 30);
+    --c-white: oklch(100% 0 0);
+
+    --color-bg: light-dark(var(--c-white-100), var(--c-purple-950));
+    --color-text: var(--c-purple-900);
+}

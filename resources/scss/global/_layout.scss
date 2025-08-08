@@ -1,0 +1,150 @@
+@use "../util/" as u;
+
+@layer layout {
+    :root {
+        --spacing-0: 0;
+        --spacing-100: calc(8 / 16 * 1rem);
+        --spacing-150: calc(12 / 16 * 1rem);
+        --spacing-200: 1rem;
+        --spacing-250: calc(20 / 16 * 1rem);
+        --spacing-300: calc(24 / 16 * 1rem);
+        --spacing-500: calc(40 / 16 * 1rem);
+        --spacing-600: calc(48 / 16 * 1rem);
+        --spacing-700: calc(60 / 16 * 1rem);
+
+        --br-5: calc(5 / 16 * 1rem);
+        --br-20: calc(20 / 16 * 1rem);
+        --br-full: 50%;
+        --wrapper-size: calc(541 / 16 * 1rem);
+        --theme: light;
+
+        @media (prefers-color-scheme: light) {
+            --theme: light;
+            color-scheme: light;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            --theme: dark;
+            color-scheme: dark;
+        }
+    }
+
+    body {
+        color: var(--color-text);
+        background-image: url("/public/img/bg-mobile-light.jpg");
+        background-color: var(--color-bg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0;
+        color-scheme: light;
+
+        @container style(--theme: dark) {
+            color-scheme: dark;
+            background-image: url("/public/img/bg-mobile-dark.jpg");
+
+            .main-header {
+                .icon-moon {
+                    display: none;
+                }
+
+                .icon-sun {
+                    display: block;
+                }
+            }
+        }
+
+        /* Fallback for Firefox: class-based theming */
+        &.theme-dark {
+            color-scheme: dark;
+
+            .main-header .icon-moon {
+                display: none;
+            }
+
+            .main-header .icon-sun {
+                display: block;
+            }
+        }
+    }
+
+    .wrapper {
+        inline-size: min(100% - var(--spacing-300), var(--wrapper-size));
+        margin-inline: auto;
+    }
+
+    .page-content {
+        /* doesn't work with scss yet :( */
+        // margin-block-start: if(
+        //     media(min-width: 768px),
+        //     var(--spacing-700);
+        //     var(--spacing-600)
+        // );
+
+        margin-block-start: var(--spacing-600);
+    }
+
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--c-white);
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+
+        .icon-moon,
+        .icon-sun {
+            cursor: pointer;
+        }
+
+        .icon-sun {
+            display: none;
+        }
+    }
+
+    /* create todo */
+
+    .l-create-todo {
+        margin-block-start: var(--spacing-500);
+        margin-block-end: var(--spacing-300);
+        .form-group {
+            border-radius: var(--br-5);
+            background-color: light-dark(var(--c-white), var(--c-purple-950));
+            box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
+            display: flex;
+            align-items: center;
+            column-gap: var(--spacing-300);
+            padding-inline: var(--spacing-200);
+            padding-block: var(--spacing-100);
+        }
+    }
+
+    ::view-transition-old(root) {
+        animation-delay: 500ms;
+    }
+
+    ::view-transition-new(root) {
+        animation: circle-in 500ms;
+    }
+
+    @include u.breakpoint("medium") {
+        body {
+            background-image: url("/public/img/bg-desktop-light.jpg");
+            background-size: 100% auto;
+
+            @container style(--theme: dark) {
+                color-scheme: dark;
+                background-image: url("/public/img/bg-desktop-dark.jpg");
+            }
+        }
+
+        .page-content {
+            margin-block-start: var(--spacing-700);
+        }
+    }
+
+    @media (prefers-reduced-motion: no-preference) and (hover: hover) {
+    }
+}
