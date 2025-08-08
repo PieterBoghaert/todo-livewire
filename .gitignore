@@ -27,3 +27,4 @@ yarn-error.log
 .pnp.loader.mjs
 .yarn
 .DS_Store
+.vercel
