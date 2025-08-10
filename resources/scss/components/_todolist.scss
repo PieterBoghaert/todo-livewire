@@ -88,6 +88,13 @@
         .active {
             color: var(--c-blue-700);
         }
+
+        button,
+        & + div {
+            &:hover {
+                color: light-dark(var(--c-purple-800), var(--c-white));
+            }
+        }
     }
 }
 
