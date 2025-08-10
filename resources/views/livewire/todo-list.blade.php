@@ -31,6 +31,8 @@
                 </div>
             @endif
         </footer>
-
+        <div class="todo-list__reorder">
+            Drag and drop to reorder list
+        </div>
     </div>
 </div>

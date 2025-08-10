@@ -29,6 +29,17 @@
         }
     }
 
+    .warning {
+        position: fixed;
+        top: 0;
+        inline-size: 100%;
+        background-color: var(--c-purple-950);
+        color: var(--c-white);
+        padding-inline: var(--spacing-100);
+        padding-block: var(--spacing-100);
+        text-align: center;
+    }
+
     body {
         color: var(--color-text);
         background-image: url("/public/img/bg-mobile-light.jpg");
@@ -50,6 +61,12 @@
                 .icon-sun {
                     display: block;
                 }
+            }
+        }
+
+        @container style(--theme: dark) or style(--theme: light) {
+            .warning {
+                display: none;
             }
         }
 
@@ -111,11 +128,11 @@
         margin-block-end: var(--spacing-300);
         .form-group {
             border-radius: var(--br-5);
-            background-color: light-dark(var(--c-white), var(--c-purple-950));
+            background-color: light-dark(var(--c-white), var(--c-purple-900));
             box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
             display: flex;
             align-items: center;
-            column-gap: var(--spacing-300);
+            column-gap: var(--spacing-200);
             padding-inline: var(--spacing-200);
             padding-block: var(--spacing-100);
         }

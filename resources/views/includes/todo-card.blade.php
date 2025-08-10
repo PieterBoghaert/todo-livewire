@@ -3,7 +3,7 @@
     <div>
         <input wire:click="toggle({{ $todo->id }})" type="checkbox" id="todo-{{ $todo->id }}"
             @checked($todo->completed) class="">
-        <label for="todo-{{ $todo->id }}">
+        <label for="todo-{{ $todo->id }}" class="{{ $todo->completed ? 'line-through' : '' }}">
             {{ $todo->name }}
         </label>
     </div>

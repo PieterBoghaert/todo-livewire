@@ -2,15 +2,19 @@ form,
 .todo-list {
     input[type="checkbox"] {
         appearance: none;
-        inline-size: 24px;
-        block-size: 24px;
+        inline-size: var(--spacing-300);
+        min-inline-size: var(--spacing-300);
+        block-size: var(--spacing-300);
         border-radius: 50%;
         border: 1px solid var(--c-white-200);
         transition: border-color 0.3s ease-in;
 
         &:hover {
             border-color: transparent;
-            background-image: linear-gradient(white, white),
+            background-image: linear-gradient(
+                    light-dark(var(--c-white), var(--c-purple-950)),
+                    light-dark(var(--c-white), var(--c-purple-950))
+                ),
                 radial-gradient(
                     circle at 100%,
                     var(--c-blue-500),
@@ -34,18 +38,17 @@ form,
         }
     }
 
-    input {
-        font-size: inherit;
-        font-family: inherit;
-    }
-
     input[type="text"] {
         padding-block: var(--spacing-150);
         inline-size: 100%;
+        padding-inline-start: var(--spacing-100);
 
-        &:focus,
-        &:focus-within {
-            outline-width: 0;
+        &:focus {
+            outline-color: light-dark(var(--c-white-200), var(--c-purple-900));
         }
     }
+}
+
+input:not([type="checkbox"], [type="radio"]) {
+    inline-size: 100%;
 }

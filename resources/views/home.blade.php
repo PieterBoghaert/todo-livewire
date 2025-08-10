@@ -8,6 +8,10 @@
 </head>
 
 <body>
+    <div class="warning">
+        This browser does not support container style queries. Please use a modern browser like
+        Chrome/Edge version 135 or higher.
+    </div>
     <main class="page-content wrapper">
         @livewire('todo-list')
     </main>

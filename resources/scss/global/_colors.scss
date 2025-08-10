@@ -1,14 +1,18 @@
 :root {
     --c-purple-950: oklch(17.5% 0.045 312.66);
     --c-purple-900: oklch(27.5% 0.035 312.66);
+    --c-purple-800: oklch(35.458% 0.02947 282.137);
     --c-purple-400: oklch(65.549% 0.23148 312.661);
     --c-blue-700: oklch(61.344% 0.20542 262.224);
     --c-blue-500: oklch(79.5% 0.21 236);
+    --c-white-700: oklch(35.749% 0.02956 279.536);
     --c-white-500: oklch(67.424% 0.02353 282.87);
+    --c-white-300: oklch(85.246% 0.0389 282.279);
     --c-white-200: oklch(92% 0.01 270);
     --c-white-100: oklch(98% 0.005 30);
     --c-white: oklch(100% 0 0);
+    --test: 
 
     --color-bg: light-dark(var(--c-white-100), var(--c-purple-950));
-    --color-text: var(--c-purple-900);
+    --color-text: light-dark(var(--c-purple-900), var(--c-white-300));
 }
