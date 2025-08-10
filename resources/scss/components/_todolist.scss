@@ -1,3 +1,5 @@
+@use "../util/" as u;
+
 .todo-list {
     box-shadow: 0 35px 50px -15px rgba(194, 195, 214, 0.5);
     overflow: hidden;
@@ -38,6 +40,11 @@
             text-decoration: line-through;
             color: light-dark(var(--c-white-300), var(--c-white-200));
         }
+
+        button {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__delete {
@@ -54,7 +61,9 @@
         border-bottom-right-radius: var(--br-5);
         background-color: light-dark(var(--c-white), var(--c-purple-900));
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-300);
         align-items: center;
         padding-inline: var(--spacing-300);
         padding-block: var(--spacing-250);
@@ -62,7 +71,7 @@
     }
 
     &__reorder {
-        margin-block-start: var(--spacing-500);
+        margin-block: var(--spacing-500);
         font-size: var(--fs-14);
         text-align: center;
     }
@@ -93,6 +102,15 @@
             .todo-list__delete {
                 opacity: 1;
             }
+        }
+    }
+}
+
+@include u.breakpoint("medium") {
+    .todo-list {
+        &__footer {
+            flex-wrap: nowrap;
+            justify-content: space-between;
         }
     }
 }

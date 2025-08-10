@@ -20,10 +20,11 @@
                 {{ $todos->count() }} items left
             </div>
             <div class="todo-list__filters">
-                <span wire:click="setFilter('all')" class="{{ $filter === 'all' ? 'active' : '' }}">All</span>
-                <span wire:click="setFilter('active')" class="{{ $filter === 'active' ? 'active' : '' }}">Active</span>
-                <span wire:click="setFilter('completed')"
-                    class="{{ $filter === 'completed' ? 'active' : '' }}">Completed</span>
+                <button wire:click="setFilter('all')" class="{{ $filter === 'all' ? 'active' : '' }}">All</button>
+                <button wire:click="setFilter('active')"
+                    class="{{ $filter === 'active' ? 'active' : '' }}">Active</button>
+                <button wire:click="setFilter('completed')"
+                    class="{{ $filter === 'completed' ? 'active' : '' }}">Completed</button>
             </div>
             @if ($todos->where('completed', true)->count() > 0)
                 <div class="todo-list__clear" wire:click="deleteAllCompleted">

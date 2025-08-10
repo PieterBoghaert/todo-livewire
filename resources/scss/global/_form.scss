@@ -42,13 +42,16 @@ form,
         padding-block: var(--spacing-150);
         inline-size: 100%;
         padding-inline-start: var(--spacing-100);
-
-        &:focus {
-            outline-color: light-dark(var(--c-white-200), var(--c-purple-900));
-        }
     }
 }
 
 input:not([type="checkbox"], [type="radio"]) {
     inline-size: 100%;
+}
+
+input,
+button {
+    &:focus {
+        outline-color: light-dark(var(--c-purple-900), var(--c-white-100));
+    }
 }
