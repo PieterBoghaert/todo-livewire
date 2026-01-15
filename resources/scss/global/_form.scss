@@ -51,9 +51,18 @@ input:not([type="checkbox"], [type="radio"]) {
     inline-size: 100%;
 }
 
-input,
 button {
     &:focus {
         outline-color: light-dark(var(--c-purple-900), var(--c-white-100));
     }
+}
+
+input {
+    &:focus {
+        outline: none;
+    }
+}
+
+.form-group:has(input:focus) {
+    border-color: light-dark(var(--c-purple-900), var(--c-white-100));
 }
